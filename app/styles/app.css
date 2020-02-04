@@ -25,6 +25,10 @@ button {
   line-height: 1.5;
 }
 
+h1 {
+  margin-left: 2%;
+}
+
 body {
   background: #f3f3f3;
 }

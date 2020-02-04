@@ -1,6 +1,6 @@
 import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
-import { render } from '@ember/test-helpers';
+import { render, click } from '@ember/test-helpers';
 import { hbs } from 'ember-cli-htmlbars';
 
 module('Integration | Component | rental/image', function(hooks) {
@@ -29,7 +29,7 @@ module('Integration | Component | rental/image', function(hooks) {
 
     assert.dom('button.image').exists();
 
-    assert.dom('.image').hasClass('large');
+    assert.dom('.image').doesNotHaveClass('large');
     assert.dom('.image small').hasText('View Larger');
 
     await click('button.image');
@@ -40,6 +40,6 @@ module('Integration | Component | rental/image', function(hooks) {
     await click('button.image');
 
     assert.dom('.image').doesNotHaveClass('large');
-    asser.dom('.image small').hasText('View Larger');
+    assert.dom('.image small').hasText('View Larger');
   });
 });
